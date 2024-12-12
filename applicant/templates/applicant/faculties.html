@@ -1,0 +1,38 @@
+<!-- мы наследуем всё от файла layout -->
+{% extends 'applicant/base_list.html' %}
+{% load static %}
+
+{% block title %}Факультеты{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'applicant/css/faculties.css' %}">
+{% endblock %}
+
+{% block mini_title %}Список факультетов{% endblock %}
+
+{% block list_a %}
+<ul>
+  <li><a href="{% url 'applicant:faculty_list' %}" class="active"><b>Факультеты</b></a></li>
+  <li><b>&gt;</b></li>
+  <li><p>Специальность</p></li>
+  <li><b>&gt;</b></li>
+  <li><p>О группе</p></li>
+</ul>
+{% endblock %}
+
+{% block content %}
+  {% for faculty in faculties %}
+    <div class="information_block faculty">
+      <div class="frame_photo">
+        <img src="{{ faculty.photo.url }}" alt="фото факультета">
+      </div>
+      <div class="about about_faculty">
+        <h4>{{ faculty.name }}</h4>
+        <p>{{ faculty.description }}</p>
+        <div class="btn_container">
+          <a href="{% url 'applicant:group_list' faculty.id %}" class="button-more">Перейти к факультету</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+{% endblock %}

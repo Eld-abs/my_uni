@@ -1,0 +1,61 @@
+<!-- мы наследуем всё от файла layout -->
+{% extends 'main/layout.html' %}
+
+{% load static %}
+
+{% block title %}Регистрация{% endblock %}
+{% block styles %}
+  <link rel="stylesheet" href="{% static 'main/css/registration.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="body_registration">
+  <div class="head">
+    <div class="icons">
+      <a href="#" class="logo"><i class="bi bi-bank"></i> <span>MyUni</span></a>
+      <a href="{% url 'main:help' %}" class="logo"><i class="bi bi-question-circle-fill"></i></a>
+    </div>
+    <hr class="horizontal-line">
+  </div>
+  <div class="container">
+    <!-- <div class="logo_video">
+      <video autoplay muted playsinline>
+        <source src="{% static 'main/videos/logo_video.mp4' %}" type="video/mp4">
+      </video>
+    </div> -->
+    <div class="content">
+      <h3>Зарегистрироваться</h3>      
+      <form method="post" class="login_form">
+        {% csrf_token %}
+        
+        <p>Логин</p>
+        {{ form.username }}
+        {{ form.username.errors }}    
+        
+        <p>Пароль</p>
+        {{ form.password1 }}
+        {{ form.password1.errors }}
+        
+        <p>Повторите пароль</p>
+        {{ form.password2 }}
+        {{ form.password2.errors }}
+        
+        <p>Email</p>
+        {{ form.email }}
+        {{ form.email.errors }}
+
+        <div class="error">
+          {% if form.non_field_errors %}
+            {{ form.non_field_errors }}
+          {% endif %}
+        </div>
+
+        <div class="buttons">
+          <button class="button-registration"type="submit">Зарегистрироваться</button>
+          <a href="{% url 'main:login' %}" class="registration">Есть аккаунт?</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

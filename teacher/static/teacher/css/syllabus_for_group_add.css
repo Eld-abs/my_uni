@@ -1,0 +1,51 @@
+input {
+  width: 50%;
+  padding: 0.1em 1em;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+
+.input_tema {
+  padding: 0.1em 0.5em;
+  margin-left: 5em;
+}
+
+/* Стиль при фокусе */
+input:focus{
+  border-color: #007BFF;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+
+/* Стиль для d */
+input::placeholder{
+  color: #999;
+  font-style: italic;
+}
+
+textarea {
+  width: 100%; 
+  padding: 0.5em; 
+  font-size: 1em; 
+  border: 1px solid #ccc; 
+  border-radius: 8px; 
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05); 
+  transition: border-color 0.3s;
+}
+
+textarea:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+.button-update {
+  color: rgb(64, 64, 64);
+  margin: 2em auto 2em auto;
+  height: max-content;
+} 

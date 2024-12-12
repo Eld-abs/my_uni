@@ -1,0 +1,57 @@
+.custom {
+  gap: 3em;
+  padding: 2em;
+}
+
+
+/* рамка */
+.frame {
+  align-items: center;
+  
+  background-color: #fff1f1;
+  height: 60%;
+}
+
+.information {
+  margin: auto;
+}
+
+.profile_photo {
+  margin: 0;
+}
+
+/* данные в профиле */
+.student_data {
+  width: 95%;
+  padding: 2em;
+
+  background-color: #fff1f1;
+
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3),
+              inset 0 0 10px rgba(255, 255, 255, 0.3);  
+}
+
+.student_data h3 {
+  font-size: 2.2em;
+  margin: auto auto 1.8em 7em;
+}
+
+.student_data h4 {
+  font-size: 1.4em;
+  margin: 0.2em 0 0em 1.2em;
+}
+
+table {
+  font-family: 'Montserrat Alternates', sans-serif;
+  width: 100%;
+  border-collapse: collapse; /* Убираем пробелы между ячейками */
+  margin: 1em 0;
+}
+
+td {
+  padding: 0.8em 1.2em; /* Добавляем отступы */
+  border-bottom: 1px solid #ccc; /* Лёгкая граница между строками */
+  font-size: 1.2em;
+}
+

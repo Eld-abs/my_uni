@@ -1,0 +1,113 @@
+.custom {
+  gap: 3em;
+  padding: 2em;
+}
+
+h2 {
+  margin: 0 auto;
+}
+
+/* рамка */
+.frame {
+  align-items: center;
+  
+  background-color: #fff1f1;
+  height: 60%;
+}
+
+.information {
+  margin: auto;
+}
+
+.profile_photo {
+  margin: 0;
+}
+
+/* данные в профиле */
+
+.student_data {
+  width: 95%;
+  padding: 2em;
+
+  background-color: #fff1f1;
+
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3),
+              inset 0 0 10px rgba(255, 255, 255, 0.3);  
+}
+
+.student_data h3 {
+  font-size: 2.2em;
+  margin: auto auto 1.8em 7em;
+}
+
+.student_data h4 {
+  font-size: 1.4em;
+  margin: 0.2em 0 0em 1.2em;
+}
+
+/* .student_data ul {
+  list-style: none;
+  margin-left: 7em;
+  padding: 0;
+}
+
+.student_data ul li {
+  font-size: 1.5em;
+}
+
+.student_data ul li span {
+  font-weight:600;
+} */
+
+table {
+  font-family: 'Montserrat Alternates', sans-serif;
+  width: 100%;
+  border-collapse: collapse; /* Убираем пробелы между ячейками */
+  margin: 1em 0;
+}
+
+td {
+  padding: 0.8em 1.2em;
+  border-bottom: 1px solid #ccc;
+  font-size: 1.2em;
+}
+
+.custom-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: solid 1px;
+  border-radius: 5px;
+  
+  width: 13em;
+}
+
+#id_gender {
+  justify-content: space-evenly;
+  border: none;
+}
+
+#id_gender label {
+  display: flex;
+  align-items: center;
+
+  border: solid 1px;
+  border-radius: 5px;
+  width: 7em;
+  height: 2em;
+  margin-right: 1em;
+}
+
+.button-update {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  width: 20em;
+  height: 3em;
+
+  transition: transform 0.2s ease;
+}

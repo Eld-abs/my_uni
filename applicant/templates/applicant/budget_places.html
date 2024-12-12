@@ -1,0 +1,76 @@
+<!-- мы наследуем всё от файла layout -->
+{% extends 'applicant/base_list.html' %}
+{% load static %}
+
+{% block title %}Места для бюджета{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'applicant/css/budget_places.css' %}">
+{% endblock %}
+
+{% block mini_title %}Бюджетные места{% endblock %}
+
+{% block list_a %}
+<ul>
+  <li><a href="{% url 'applicant:faculty_list' %}" class="active">Факультеты</a></li>
+  <li><b>&gt;</b></li>
+  <li><a href="{% url 'applicant:group_list' group.faculty.id %}" class="active">Специальность</a></li>
+  <li><b>&gt;</b></li>
+  <li><a href="{% url 'applicant:lesson_list' group.id %}" class="active">О группе</a></li>
+</ul>
+{% endblock %}
+
+{% block content %}
+  <div class="information">
+    <h3>{{ group.name }}</h3>
+    <div class="texts">
+      <p>Бюджетные места в процентах: {{ group.budget_place_percent }}%</p>
+      <p>Бюджетные места: {{ budget_places }}</p>
+    </div>
+  </div>
+
+  <div class="table_class">
+    <table>
+      <thead>
+        <tr>
+          <th>Места</th>
+          <th>ID</th>
+          <th>Фамилия и имя</th>
+          <th>ОРТ балл</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for applicant in applicants %}
+          <tr {% if forloop.counter <= budget_places %}class="highlight"{% endif %}>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ applicant.id }}</td>
+            <td>{{ applicant.surname }} {{ applicant.name }}</td>
+            <td>{{ applicant.ort_score }}</td>
+          </tr>
+        {% empty %}
+          <tr>
+            <td colspan="4" class="no-applicants">Нет студентов выбравший бюджет</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="buttons_1">
+    {% if is_budget_application %}
+    <!-- Если пользователь уже подал заявку, показываем кнопку с отменой -->
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit" class="button-update back">Я передумал</button>
+    </form>
+    {% else %}
+    <!-- Если пользователь ещё не подал заявку, показываем кнопку с заявкой -->
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit" class="button-update save">Хочу в бюджет</button>
+    </form>
+    {% endif %}
+  </div>
+
+{% endblock %}
+

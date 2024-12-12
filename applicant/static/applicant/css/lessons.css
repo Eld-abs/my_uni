@@ -1,0 +1,166 @@
+/* Общие стили */
+.container {
+  background-color: #43ff43;
+}
+
+.frame_photo {
+  height: 20em;
+  width: 30em;
+  padding: 0;
+
+  border-radius: 20%;
+  overflow: hidden;
+  box-shadow: 0 0 30px #43ff43, inset 0 0 10px #43ff43;
+  background-color: #43ff43;
+}
+
+.frame_photo:hover {
+  transform: scale(1.01);
+}
+
+.mini_head {
+  background-color: #d2ffdb;
+}
+
+.mini_head.fixed {
+  background-color: #d2ffdbda;
+}
+
+/* стили lesson*/
+.about_group {
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 100px;
+  width: 95%;
+  background-color: #d2ffdb;
+  box-shadow: 0 10px 10px #d1ffd1, inset 0 0 10px #9cff9c;
+}
+
+.text_and_photo {
+  display: flex;
+  padding: 2em;
+  justify-content: space-around;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  max-width: 50%;
+  gap: 2em;
+}
+
+.text h4 {
+  font-size: 1.7em;
+  font-weight: 600;
+}
+
+.more {
+  text-align: center;
+  margin: auto 5em 2em 5em;
+  
+}
+
+
+/* Уроки */
+.lessons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+
+  border-radius: 50px;
+  width: 85%;
+  background-color: #d2ffdb;
+  box-shadow: 0 10px 10px #d1ffd1, inset 0 0 10px #9cff9c;
+  padding: 1em;
+}
+
+.lessons h3 {
+  font-weight: 600;
+  font-size: 1.5em;
+}
+
+.lessons h5 {
+  font-size: 1.4em;
+}
+
+.lesson {
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 10px;
+  width: 90%;
+  background-color: #a9ffa9;
+  padding: 0.4em 0.4em 0.4em 2em;
+  margin: 0.5em 0;
+}
+
+.lesson h5 {
+  margin: 0.6em 0 0.4em 4em;
+}
+
+.btn_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+
+  padding-right: 3em;
+
+  border-radius: 20px;
+  width: 60%;
+  background-color: #d2ffdb;
+  box-shadow: 0 10px 10px #d1ffd1, inset 0 0 10px #9cff9c;
+  padding: 0.4em 0.4em 0.4em 2em;
+  margin: 0.5em 0;
+}
+
+.information_about_group {
+  display: flex;
+  flex-direction: column;
+  
+  width: 70%;
+  margin: 1em 0;
+}
+
+.btn_container h5 {
+  margin: 1em auto;
+}
+
+.button-more {
+  width: 15em;
+  height: 2em;
+  box-shadow: 0 0 3px black , inset 0 0 10px rgba(255, 255, 255, 0.5);
+  background-color: rgb(7, 186, 28);
+  color: white;
+}
+
+.btn_end_ort-score {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 80%;
+  margin-bottom: 1em;
+  gap: 2em;
+}
+
+.inf {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 2em;
+}
+
+.ort-score p {
+  margin: 0;
+}
+
+.message {
+  font-size: 0.9em;
+  color: red;
+}

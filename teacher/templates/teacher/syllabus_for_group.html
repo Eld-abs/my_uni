@@ -1,0 +1,103 @@
+<!-- мы наследуем всё от файла base.html -->
+{% extends 'teacher/base.html' %}
+{% load static %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{% static 'teacher/css/syllabus_for_group.css' %}">
+{% endblock %}
+
+{% block title %}учебный план{% endblock %}
+
+{% block custom %}
+<div class="frame frame-1">
+  <h3>Учебный план</h3>
+  <div class="group">
+    <div class="about_group">
+      <p class="big"><strong>Группа:</strong> ИСТ-1-23</p>
+      <div class="texts">
+        <p><strong>Семестр:</strong> 3</p>
+        <p><strong>Предмет:</strong> Программирование</p>
+      </div>
+    </div>
+    <div class="func">
+      <p class="sort"><span class="search-icon"><i class="bi bi-funnel"></i></span> Фильтровать</p> 
+      <div>
+        <input type="text" class="search-input" placeholder="Поиск по названию...">
+        <span class="search-icon">🔍</span>
+      </div>
+    </div>
+  </div>
+  <div class="topics">
+    <div class="topic">
+      <table>
+        <thead>
+          <tr>
+            <td colspan="2"><strong class="tema">Тема: </strong>pygame библиотека</td>
+          </tr>
+        </thead>
+        <tr>
+          <td><strong>Количество часов:</strong></td>
+          <td>лекции: 2 лаборатории: 4</td>
+        </tr>
+        <tr>
+          <td><strong>Дата начала темы: </strong></td>
+          <td>20.09.2024</td>
+        </tr>
+        <tr>
+          <td><strong>Дата послед. изменения: </strong></td>
+          <td>14.09.2024</td>
+        </tr>
+        <tr>
+          <td><strong>Статус: </strong></td>
+          <td>завершено</td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <details>
+              <summary><strong>План: <i class="bi bi-hand-index search-icon"></i></strong></summary>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, quidem itaque! Iure error odit non repellat dolore illo, molestiae nam labore fugiat reiciendis. Enim eligendi minima aliquid illo sed nisi pariatur molestiae sint facilis. Nulla, rem voluptatum? Illum numquam hic assumenda deserunt doloremque iste quibusdam suscipit minima rem tempore aliquam amet molestiae optio eius quisquam neque eum soluta, et nesciunt ipsa officiis dolorem. Cum doloribus eius asperiores iste eos, a hic mollitia nostrum enim neque provident dignissimos cupiditate fugit rerum nesciunt fugiat expedita modi iure odio accusantium similique? Aperiam reprehenderit optio fugit illum iusto iure voluptates tempore expedita totam, nemo, natus aliquid numquam ipsum repellat perferendis et quam debitis facilis quaerat enim blanditiis vel sapiente! Unde itaque omnis laudantium, facilis error corrupti ab nulla ut tempora voluptatum porro nemo ipsa, debitis ipsum veniam delectus saepe quos labore vitae ex recusandae. Et perspiciatis odit repellat ipsam fugiat amet! Non odit explicabo illo est, veniam numquam modi minima pariatur repellendus voluptates quibusdam reiciendis fuga magni vel placeat rem tempora ducimus ab in debitis! Ullam quam vero deleniti, quos tempore saepe doloribus maiores dolores unde aliquid, minima dignissimos sit laudantium? Maiores eligendi nam repellendus molestiae impedit a fugit qui, nihil beatae repudiandae sit.</p>
+            </details>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="topic">
+      <table>
+        <thead>
+          <tr>
+            <td colspan="2"><strong class="tema">Тема: </strong>ООП практическая задача</td>
+          </tr>
+        </thead>
+        <tr>
+          <td><strong>Количество часов:</strong></td>
+          <td>лекции: 2 лаборатории: 4</td>
+        </tr>
+        <tr>
+          <td><strong>Дата начала темы: </strong></td>
+          <td>20.09.2024</td>
+        </tr>
+        <tr>
+          <td><strong>Дата послед. изменения: </strong></td>
+          <td>14.09.2024</td>
+        </tr>
+        <tr>
+          <td><strong>Статус: </strong></td>
+          <td>завершено</td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <details>
+              <summary><strong>План: <i class="bi bi-hand-index search-icon"></i></strong></summary>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, quidem itaque! Iure error odit non repellat dolore illo, molestiae nam labore fugiat reiciendis. Enim eligendi minima aliquid illo sed nisi pariatur molestiae sint facilis. Nulla, rem voluptatum? Illum numquam hic assumenda deserunt doloremque iste quibusdam suscipit minima rem tempore aliquam amet molestiae optio eius quisquam neque eum soluta, et nesciunt ipsa officiis dolorem. Cum doloribus eius asperiores iste eos, a hic mollitia nostrum enim neque provident dignissimos cupiditate fugit rerum nesciunt fugiat expedita modi iure odio accusantium similique? Aperiam reprehenderit optio fugit illum iusto iure voluptates tempore expedita totam, nemo, natus aliquid numquam ipsum repellat perferendis et quam debitis facilis quaerat enim blanditiis vel sapiente! Unde itaque omnis laudantium, facilis error corrupti ab nulla ut tempora voluptatum porro nemo ipsa, debitis ipsum veniam delectus saepe quos labore vitae ex recusandae. Et perspiciatis odit repellat ipsam fugiat amet! Non odit explicabo illo est, veniam numquam modi minima pariatur repellendus voluptates quibusdam reiciendis fuga magni vel placeat rem tempora ducimus ab in debitis! Ullam quam vero deleniti, quos tempore saepe doloribus maiores dolores unde aliquid, minima dignissimos sit laudantium? Maiores eligendi nam repellendus molestiae impedit a fugit qui, nihil beatae repudiandae sit.</p>
+            </details>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="buttons">
+      <a href="{% url 'teacher:syllabus' %}" class="btn_custom button-update"><i class="bi bi-box-arrow-left mini-icon"></i>Вернутся назад</a>
+      <a href="{% url 'teacher:syllabus_for_group_add' %}" class="btn_custom button-update"><i class="bi bi-plus-circle"></i>Добавить тему</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

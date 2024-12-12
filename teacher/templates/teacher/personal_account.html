@@ -1,0 +1,31 @@
+<!-- мы наследуем всё от файла layout -->
+{% extends 'teacher/base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'teacher/css/personal_account.css' %}">
+{% endblock %}
+
+{% block title %}Студент личный кабинет{% endblock %}
+
+{% block custom %}
+  <div class="custom">
+    <div class="frame">
+      <div class="information">
+        <div class="profile_photo">
+          <img src="{{ profile.profile_picture.url }}" alt="Фото профиля">
+        </div>
+        <ul class="data">
+          <li><p><span>Логин: </span> Нургул</p></li>
+          <li><p><span>Пароль: </span> ********</p></li>
+          <li><p><span>email: </span> tutemail@tr.mu</p></li>
+        </ul>
+      </div>
+      <div class="buttons">
+        <a href="{% url 'student:schedule' %}" class="btn_custom button-navigate"><i class="bi bi-card-list"></i> <span>Расписание</span></a>
+        <a href="" class="btn_custom button-navigate"><i class="bi bi-list-ul"></i> <span>Учебный план</span></a>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+    

@@ -1,0 +1,244 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.head {
+  width: 100%;
+  height: 7%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+} 
+
+.logo {
+  color: black;
+  outline-style: none;
+  font-size: 3em;
+  font-weight: 700;
+  text-decoration: none;
+  margin: 0.6% 5%;
+}
+
+.logo i {
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.logo i:hover {
+  transform: scale(1.05); /* Увеличиваем иконки внутри .logo на 10% при наведении */
+}
+
+.logo span {
+  transition: transform 0.275s ease;
+  display: inline-block;
+}
+
+.logo span:hover {
+  transform: scale(1.05);
+}
+
+.horizontal-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+  
+  border: none;
+  border-top: 2px solid black;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.container {
+  background-color: bisque;
+  border-radius: 10px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  min-height: 85vh;
+  font-size: 2.5vh;
+  margin: 1vh 0;
+  gap: 1em;
+  padding: 5vh 0;
+  
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3), /* Внешняя тень */
+                inset 0 0 15px rgba(255, 255, 255, 0.3); /* Внутренняя тень */
+}
+
+h3 {
+  font-size: 2em;
+}
+
+h3 span{
+  font-weight: 700;
+}
+
+.about_applicant {
+  display: flex;
+  justify-content: center;
+
+  width: 80%;
+  padding: 1%;
+  gap: 2%;
+
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3),
+              inset 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.profile_photo {
+  width: 10em;
+  height: 13em;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 0.4em; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(0, 0, 0, 0.3); /* внешняя тень для блока */
+  background-color: whitesmoke;
+}
+
+.profile_photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3); /* внутренняя тень */
+  border-radius: 8px; /* немного меньше радиус, чтобы тень была заметнее */
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: start;
+  font-size: 1em;
+
+  width: 40%;
+  max-width: 40%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.data p {
+  margin-bottom: 0.5em;
+}
+
+.data p span {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+
+/* стили кнопок */
+.button-update {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  width: 15em;
+  height: 2em;
+  
+  border: 2px solid transparent;
+  border-radius: 10px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5) , inset 0 0 10px rgba(255, 255, 255, 0.5);
+  transition: transform 0.3s ease;
+  
+  text-decoration: none;  
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+.about_applicant .button-update {
+  margin: 18% 1% 1% 1%;
+}
+
+.button-update:hover {
+  transform: scale(1.02);
+}
+
+.button-update:active {
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.8);
+  transform: scale(0.99); /* Легкое уменьшение кнопки при нажатии */
+}
+
+.custom {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  
+  width: 80%;
+  min-height: 35vh;
+  padding: 1%;
+  gap: 2%;
+
+  background-color: rgb(255, 238, 217);
+  
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3),
+              inset 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.back:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3),
+              inset 0 0 10px rgb(255, 0, 0);
+}
+
+.back:active {
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.734),
+              inset 0 0 10px rgb(255, 0, 0);
+}
+
+.save:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3),
+              inset 0 0 10px rgb(3, 255, 58);
+}
+
+.save:active {
+  box-shadow: 0 0 10px rgb(3, 255, 58),
+              inset 0 0 10px rgb(3, 255, 58);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.button-for-exit {
+  padding: 0 1em;
+  
+  width: 15em;
+  height: 4em;
+  gap: 1em;
+  
+  box-shadow: 0 0 3px rgb(0, 0, 0) , inset 0 0 10px rgba(255, 255, 255, 0.5);
+
+  background-color: #dedede;
+  color: rgb(0, 0, 0);
+}
+
+.buttons {
+  display: flex;
+  width: 80%;
+  justify-content: end;
+}

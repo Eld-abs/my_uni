@@ -1,0 +1,87 @@
+.frame {
+  display: block;
+  background-color: #ecfbff;
+
+  height: auto;
+}
+
+.frame-1 {
+  margin-top: 8em;
+}
+
+h3, h4 {
+  font-size: 2.3em;
+  margin: 1.2em 0 1em 7em;
+  color: #6750ff;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h4 {
+  margin: 1em 0 1em 0;
+  font-size: 1.5em;
+}
+
+.nav {
+  width: 100%;
+}
+
+.nav a {
+  color: #6750ff;
+  text-decoration: none;
+  margin: 0 0.8em;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.nav a:hover {
+  color: #6750ff;
+}
+
+.schedule {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+table {
+  width: 60vw;
+  border-collapse: collapse;
+  margin-top: 1%;
+  border-radius: 20px; /* Добавлено для округления углов */
+  overflow: hidden; /* Обеспечивает корректное отображение содержимого внутри округленных углов */
+  margin-bottom: 3em;
+}
+
+.lessons span {
+  color: rosybrown;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 1em;
+  text-align: center;
+}
+
+th {
+  background-color: #6750ff;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #e0e0e0;
+}

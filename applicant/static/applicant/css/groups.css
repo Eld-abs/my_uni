@@ -1,0 +1,24 @@
+.container {
+  background-color: #4343ff;
+}
+
+.information_block {
+  background-color: #b6c0ff;
+}
+
+.frame_photo {
+  background-color: #4343ff;
+  box-shadow: 0 0 10px #4343ff, inset 0 0 10px #4343ff; /* внешняя тень для блока */
+}
+
+.button-more {
+  background-color:#4343ff;
+}
+
+.mini_head {
+  background-color: #b6c0ff;
+}
+
+.mini_head.fixed {
+  background-color: #b6c0ffda;
+}

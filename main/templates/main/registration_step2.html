@@ -1,0 +1,136 @@
+<!-- мы наследуем всё от файла layout -->
+{% extends 'main/layout.html' %}
+
+{% load static %}
+
+{% block title %}Регистрация второй шаг{% endblock %}
+{% block styles %}
+  <link rel="stylesheet" href="{% static 'main/css/registration_step2.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="body_registration">
+  <div class="head">
+    <div class="icons">
+      <a href="https://www.oshsu.kg/ru" class="logo"><i class="bi bi-bank"></i> <span>MyUni</span></a>
+      <a href="{% url 'main:help' %}" class="logo"><i class="bi bi-question-circle-fill"></i></a>
+    </div>
+    <hr class="horizontal-line">
+  </div>
+  <div class="container">
+    <!-- <div class="logo_video">
+      <video autoplay muted playsinline>
+        <source src="{% static 'main/videos/logo_video.mp4' %}" type="video/mp4">
+      </video>
+    </div> -->
+    <div class="content">
+      <!-- Добавились поля для фамилии и имени на забудь добавить в шаблон-->
+      <h3>Добавить личные данные абитуриента</h3>
+      <p class="warning">Обратите внимание! Без этих данных ваш учетный запись будет удален!</p>
+      <form method="post" class="login_form" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="form_block">
+          <p>Введите имя</p>
+          {{ form.name }}
+          {{ form.name.errors }}
+        </div>
+
+        <div class="form_block">
+          <p>Введите фамилию</p>
+          {{ form.surname }}
+          {{ form.surname.errors }}
+        </div>
+
+        <div class="form_block">
+          <p>Вставьте фото 3*4 для профиля</p>
+          {{ form.profile_picture }}
+          {{ form.profile_picture.errors }}
+        </div>
+
+        <div class="form_block">
+          <p>Введите номер телефона</p>
+          {{ form.phone_number }}
+          {{ form.phone_number.errors }}
+        </div>
+        
+        <div class="form_block">
+          <p>Введите ваш полный адрес:</p>
+          
+          <div class="address">
+            <div class="form_block">
+              <p>Введите область в котором вы живете</p>
+              {{ form.address_region }}
+              {{ form.address_region.errors }}
+            </div>
+            <div class="form_block">
+              <p>Введите район в котором вы живете</p>
+              {{ form.address_district }}
+              {{ form.address_district.errors }}
+            </div>
+            <div class="form_block">
+              <p>Введите город в котором вы живете</p>
+              {{ form.address_city }}
+              {{ form.address_city.errors }}
+            </div>
+            <div class="form_block">
+              <p>Введите улицу в котором вы живете</p>
+              {{ form.address_village }}
+              {{ form.address_village.errors }}
+            </div>
+            <div class="form_block">
+              <p>Введите номер дома</p>
+              {{ form.address_home }}
+              {{ form.address_home.errors }}
+            </div>
+          </div>
+        </div>
+        
+        <div class="form_block">
+          <p>Введите дату рождение</p>
+          {{ form.birth_year }}
+          {{ form.birth_year.errors }}
+        </div>
+
+        <div class="form_block gender-choice">
+          <p>Выберите пол</p>
+          <span>
+            <label for="gender-man">
+              <input type="radio" name="gender" value="man" id="gender-man">
+              Мужчина
+            </label>
+            <label for="gender-woman">
+              <input type="radio" name="gender" value="woman" id="gender-woman">
+              Женщина
+            </label>
+          </span>
+          {{ form.gender.errors }}
+        </div>
+        
+        <div class="form_block">
+          <p>Введите название и номер школу который вы закончили</p>
+          {{ form.school }}
+          {{ form.school.errors }}
+        </div>
+        
+        <div class="form_block">
+          <p>Введите ваш основной балл по ОРТ</p>
+          {{ form.ort_score }}
+          {{ form.ort_score.errors }}
+        </div>
+
+        <div class="error">
+          {% if form.non_field_errors %}
+            {{ form.non_field_errors }}
+          {% endif %}
+        </div>
+
+        <div class="buttons">
+          <button class="button-registration"type="submit">Добавить данные</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,110 @@
+<!-- мы наследуем всё от файла layout -->
+{% extends 'student/base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'student/css/schedule.css' %}">
+{% endblock %}
+
+{% block title %}Профиль{% endblock %}
+
+{% block custom %}
+<div class="custom">
+  <h2>Расписание</h2>
+  <div class="frame">
+    <div class="block">
+      <div class="nav">
+        <a href="#" onclick="showSchedule('понедельник')">Понедельник</a>
+        <a href="#" onclick="showSchedule('вторник')">Вторник</a>
+        <a href="#" onclick="showSchedule('среда')">Среда</a>
+        <a href="#" onclick="showSchedule('четверг')">Четверг</a>
+        <a href="#" onclick="showSchedule('пятница')">Пятница</a>
+        <a href="#" onclick="showSchedule('суббота')">Суббота</a>
+      </div>
+
+      <div id="понедельник" class="schedule">
+        <h3>Расписание на понедельник</h3>
+        <table class="lessons">
+          <tr><th>№</th><th>Пары</th><th>Время</th></tr>
+          <tr><td>1</td><td><span>Нет пары</span></td><td>8:20-9:50</td></tr>
+          <tr><td>2</td><td><span>Нет пары</span></td><td>10:00-11:30</td></tr>
+          <tr><td>3</td><td><span>Нет пары</span></td><td>11:40-13:10</td></tr>
+          <tr><td>4</td><td>Разработка Windows-приложений</td><td>13:20-14:50</td></tr>
+          <tr><td>5</td><td>Разработка и применение ППП в ИС</td><td>15:00-16:30</td></tr>
+          <tr><td>6</td><td>Физическая культура</td><td>16:40-18:10</td></tr>
+        </table>
+      </div>
+
+      <!-- Вторник -->
+      <div id="вторник" class="schedule">
+        <h3>Расписание на вторник</h3>
+        <table class="lessons">
+          <tr><th>№</th><th>Пары</th><th>Время</th></tr>
+          <tr><td>1</td><td><span>Нет пары</span></td><td>8:20-9:50</td></tr>
+          <tr><td>2</td><td><span>Нет пары</span></td><td>10:00-11:30</td></tr>
+          <tr><td>3</td><td>Теория вероятностей</td><td>11:40-13:10</td></tr>
+          <tr><td>4</td><td>Программирование</td><td>13:20-14:50</td></tr>
+          <tr><td>5</td><td>Программирование</td><td>15:00-16:30</td></tr>
+          <tr><td>6</td><td>Разработка и применение ППП в ИС</td><td>16:40-18:10</td></tr>
+        </table>
+      </div>
+
+      <!-- Среда -->
+      <div id="среда" class="schedule">
+        <h3>Расписание на среду</h3>
+        <table class="lessons">
+          <tr><th>№</th><th>Пары</th><th>Время</th></tr>
+          <tr><td>1</td><td><span>Нет пары</span></td><td>8:20-9:50</td></tr>
+          <tr><td>2</td><td><span>Нет пары</span></td><td>10:00-11:30</td></tr>
+          <tr><td>3</td><td><span>Нет пары</span></td><td>11:40-13:10</td></tr>
+          <tr><td>4</td><td>Информационные технологии</td><td>13:20-14:50</td></tr>
+          <tr><td>5</td><td>Теория вероятностей</td><td>15:00-16:30</td></tr>
+          <tr><td>6</td><td>Философия</td><td>16:40-18:10</td></tr>
+        </table>
+      </div>
+
+      <!-- Четверг -->
+      <div id="четверг" class="schedule">
+        <h3>Расписание на четверг</h3>
+        <table class="lessons">
+          <tr><th>№</th><th>Пары</th><th>Время</th></tr>
+          <tr><td>1</td><td><span>Нет пары</span></td><td>8:20-9:50</td></tr>
+          <tr><td>2</td><td><span>Нет пары</span></td><td>10:00-11:30</td></tr>
+          <tr><td>3</td><td><span>Нет пары</span></td><td>11:40-13:10</td></tr>
+          <tr><td>4</td><td>Информационные технологии</td><td>13:20-14:50</td></tr>
+          <tr><td>5</td><td>Разработка Windows-приложений</td><td>15:00-16:30</td></tr>
+          <tr><td>6</td><td>Физическая культура</td><td>16:40-18:10</td></tr>
+        </table>
+      </div>
+
+      <!-- Пятница -->
+      <div id="пятница" class="schedule">
+        <h3>Расписание на пятницу</h3>
+        <table class="lessons">
+          <tr><th>№</th><th>Пары</th><th>Время</th></tr>
+          <tr><td>1</td><td><span>Нет пары</span></td><td>8:20-9:50</td></tr>
+          <tr><td>2</td><td><span>Нет пары</span></td><td>10:00-11:30</td></tr>
+          <tr><td>3</td><td><span>Нет пары</span></td><td>11:40-13:10</td></tr>
+          <tr><td>4</td><td>Программирование</td><td>13:20-14:50</td></tr>
+          <tr><td>5</td><td>Программирование</td><td>15:00-16:30</td></tr>
+          <tr><td>6</td><td>Философия</td><td>16:40-18:10</td></tr>
+        </table>
+      </div>
+
+      <!-- Суббота -->
+      <div id="суббота" class="schedule">
+        <h3>Расписание на субботу</h3>
+        <table class="lessons">
+          <tr><th>№</th><th>Пары</th><th>Время</th></tr>
+          <tr><td>1</td><td><span>Нет пары</span></td><td>8:20-9:50</td></tr>
+          <tr><td>2</td><td><span>Нет пары</span></td><td>10:00-11:30</td></tr>
+          <tr><td>3</td><td>Теория вероятностей</td><td>11:40-13:10</td></tr>
+          <tr><td>4</td><td>Разработка и применение ППП в ИС</td><td>13:20-14:50</td></tr>
+          <tr><td>5</td><td>Физическая культура</td><td>15:00-16:30</td></tr>
+          <tr><td>6</td><td><span>Нет пары</span></td><td>16:40-18:10</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="{% static 'student/js/schedule.js' %}"></script>
+{% endblock %}

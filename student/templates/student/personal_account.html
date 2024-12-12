@@ -1,0 +1,35 @@
+<!-- мы наследуем всё от файла layout -->
+{% extends 'student/base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'student/css/personal_account.css' %}">
+{% endblock %}
+
+{% block title %}Студент личный кабинет{% endblock %}
+
+{% block custom %}
+  <div class="custom">
+    <h2>Личный кабинет</h2>
+    <div class="frame">
+      <div class="information">
+        <div class="profile_photo">
+          <img src="{{ profile.profile_picture.url }}" alt="Фото профиля">
+        </div>
+        <ul class="data">
+          <li><p><span>Имя: </span>{{ profile.name }}</p></li>
+          <li><p><span>Фамилия: </span>{{ profile.surname }}</p></li>
+          <li><p><span>Специальность: </span>{{ group_name }}</p></li>
+          <li><p><span>Группа: </span>{{ group_code }}</p></li>
+          <li><p><span>Форма обучения: </span>{{ student_data.form_of_training }}</p></li>
+          <li><p><span>Форма оплаты: </span>Контракт</p></li>
+        </ul>
+      </div>
+      <div class="buttons">
+        <a href="{% url 'student:schedule' %}" class="btn_custom button-navigate"><i class="bi bi-card-list"></i> <span>Расписание</span></a>
+        <a href="" class="btn_custom button-navigate"><i class="bi bi-table"></i> <span>Кредиты</span></a>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+    

@@ -1,0 +1,105 @@
+<!-- мы наследуем всё от файла base.html -->
+{% extends 'teacher/base.html' %}
+{% load static %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{% static 'teacher/css/find_students.css' %}">
+{% endblock %}
+
+{% block title %}Поиск группы{% endblock %}
+
+{% block custom %}
+  <div class="frame frame-1">
+    <h3>Поиск группы</h3>
+    <div class="search">
+      <input type="text" class="search_input">
+      <button><i class="bi bi-search icon_search"></i></button>
+    </div>
+    <div class="table_students">
+      <table>
+        <thead>
+          <tr>
+            <td>Группа</td>
+            <td>Семестр</td>
+            <td>Я преподаю</td>
+            <td>Расписание</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ИСТ-1-23</td>
+            <td>3</td>
+            <td>ДА</td>
+            <td>Расписание группы</td>
+          </tr>
+          <tr>
+            <td>ИСТ-1-23</td>
+            <td>3</td>
+            <td>ДА</td>
+            <td>Расписание группы</td>
+          </tr>
+          <tr>
+            <td>ИСТ-1-23</td>
+            <td>3</td>
+            <td>ДА</td>
+            <td>Расписание группы</td>
+          </tr>
+          <tr>
+            <td>ИСТ-1-23</td>
+            <td>3</td>
+            <td>ДА</td>
+            <td>Расписание группы</td>
+          </tr>
+          <tr>
+            <td>ИСТ-1-?., ./23</td>
+            <td>3</td>
+            <td>ДА</td>
+            <td>Расписание группы</td>
+          </tr>
+          <tr>
+            <td>ИСТ-1-23</td>
+            <td>3</td>
+            <td>ДА</td>
+            <td>Расписание группы</td>
+          </tr>
+          <tr>
+            <td>ИСТ-1-23</td>
+            <td>3</td>
+            <td>ДА</td>
+            <td>Расписание группы</td>
+          </tr>
+          <tr>
+            <td>ИСТ-1-23</td>
+            <td>3</td>
+            <td>ДА</td>
+            <td>Расписание группы</td>
+          </tr>
+          <tr>
+            <td>ИСТ-1-23</td>
+            <td>3</td>
+            <td>ДА</td>
+            <td>Расписание группы</td>
+          </tr>
+          <tr>
+            <td>ИСТ-1-23</td>
+            <td>3</td>
+            <td>ДА</td>
+            <td>Расписание группы</td>
+          </tr>
+          <tr>
+            <td>ИСТ-1-23</td>
+            <td>3</td>
+            <td>ДА</td>
+            <td>Расписание группы</td>
+          </tr>
+          <tr>
+            <td>ИСТ-1-23</td>
+            <td>3</td>
+            <td>ДА</td>
+            <td>Расписание группы</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+{% endblock %}

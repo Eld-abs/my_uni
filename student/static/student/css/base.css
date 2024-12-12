@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+body {
+  display: flex;
+  font-size: 2vh;
+}
+
+/* левая панель навигации */
+.sidebar {
+  position: fixed;
+  min-width: 25%;
+  width: 25%;
+  height: 100vh;
+  background-color: #ff5050;
+  left: 0;
+  border-right: 2px solid black;
+  padding-bottom: 4em;
+}
+
+.sidebar h4 {
+  font-size: 2em;
+  margin: 0  1em ;
+}
+
+.sidebar ul {
+  list-style: None;
+  font-size: 1.5em;
+  margin: 10% auto;
+  padding: 0;
+}
+
+.sidebar li {
+  transition: transform 0.3s ease-out;
+  margin-top: 5%;
+  margin-left: 15%;
+  padding: 0;
+}
+
+.sidebar li:hover {
+  transform: scaleX(1.05);
+}
+
+.sidebar li a {
+
+  text-decoration: none;
+  color: rgb(75, 75, 75);
+}
+
+.sidebar li a i {
+  color: black;
+  margin-right: 3%;
+}
+
+.sidebar .buttons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  color: black;
+  outline-style: none;
+  font-size: 3em;
+  font-weight: 700;
+  text-decoration: none;
+  margin: 1em;
+  display: block;
+}
+
+.logo i {
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.logo i:hover {
+  transform: scale(1.05);
+}
+
+.logo span {
+  transition: transform 0.275s ease;
+  display: inline-block;
+}
+
+.logo span:hover {
+  transform: scale(1.05);
+}
+
+.icons {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* контейнер и то что внутри */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+  padding: 0;
+  width: 75%;
+  max-width: None;
+  margin-left: 25%;
+  min-height: 100vh;
+  background-color: #ff9696;
+}
+
+h2 {
+  margin: 0.5em auto;
+  font-size: 2.2em;
+}
+
+.help {
+  padding: 0;
+  margin: 0;
+}
+
+/* кастом */
+.custom {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 100%;
+  margin: 2em;
+}
+
+.frame {
+  display: flex;
+  justify-content: space-around;
+
+  width: 95%;
+  height: 85%;
+  padding: 1%;
+  gap: 2%;
+
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3),
+              inset 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.button-for-exit {
+  width: 8em;
+  height: 3em;
+}

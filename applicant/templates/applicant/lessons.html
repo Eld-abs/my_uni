@@ -1,0 +1,103 @@
+<!-- мы наследуем всё от файла layout -->
+{% extends 'applicant/base_list.html' %}
+{% load static %}
+
+{% block title %}О группе: {{ group.name }}{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'applicant/css/lessons.css' %}">
+{% endblock %}
+
+{% block mini_title %}Об этой специальности{% endblock %}
+
+{% block list_a %}
+<ul>
+  <li><a href="{% url 'applicant:faculty_list' %}" class="active">Факультеты</a></li>
+  <li><b>&gt;</b></li>
+  <li><a href="{% url 'applicant:group_list' group.faculty.id %}" class="active">Специальность</a></li>
+  <li><b>&gt;</b></li>
+  <li><p class="active"><b>О группе</b></p></li>
+</ul>
+{% endblock %}
+
+{% block content %}
+  <div class="about_group">
+    <div class="text_and_photo">
+      <div class="text">
+        <h4>Подробнее о данной специальности</h4>
+        {{ group.details.about_group }}
+      </div>
+      <div class="frame_photo">
+        <img src="{{ group.photo_2.url }}" alt="">
+      </div>
+    </div>
+    <p class="more">{{ group.details.more }}</p>
+  </div>
+  <div class="lessons">
+    {% if lessons%}
+      <b><h3>Некоторые уроки которые преподаются в этой специальности</h3></b>
+      {% for lesson in lessons %}
+        <div class="lesson">
+          <h5>{{ lesson.name }}</h5>
+          <p>{{ lesson.description }}</p>
+        </div>
+      {% endfor %}
+    {% else %}
+      <div class="lesson">
+        <p>Нет уроков</p>
+      </div>
+    {% endif %}
+  </div>
+
+  <form method="post" class="btn_container">
+    {% csrf_token %}
+    <h5>О данной группе</h5>
+    <div class="information_about_group">
+      <p><strong>Название:</strong> {{ group.name }}</p>
+      <p><strong>Факультет которому принадлежит:</strong> {{ group.faculty }}</p>
+      <p><strong>Минимальный ОРТ балл:</strong> {{ group.min_ort_score }}</p>
+      <p><strong>Бюджетные места в процентах:</strong> {{ group.budget_place_percent }}%  </p> 
+      <p><strong>Сколько мест сейчас доступно:</strong> 2 <!-- {{ budget_places }} --></p>
+      <p><strong>Длительность обучение:</strong> {{ group.duration_years }}года</p>
+      <p><strong>Размер контракта:</strong> {{ group.contract }}</p>
+    </div>
+    <h5>Вы выбрали эту специальность?</h5>
+    <div class="btn_end_ort-score">
+      <div class="inf">
+        <div class="ort-score">
+          <p>Ваш ОРТ балл: <b>{{ request.user.profile.ort_score }}</b></p>
+          <p>Минимальный ОРТ балл: <b>{{ group.min_ort_score }}</b></p>
+        </div>
+  
+        <div class="form_block gender-choice">
+          <p>Выберите форму обучение</p>
+          <span>
+            <label for="full-time">
+              <input type="radio" name="form_of_training" value="Очный" id="full_time">
+              Очный
+            </label>
+            <label for="correspondence">
+              <input type="radio" name="form_of_training" value="Заочный" id="correspondence">
+              Заочный
+            </label>
+          </span>
+        </div>
+      </div>
+
+      <div class="inf">
+        <a href="{% url 'applicant:budget_places' temporary_group_id=group.id %}" class="button-more">Бюджет</a>
+        <button type="submit" class="button-more">Вступить</button>
+      </div>
+    </div>
+
+    {% if messages %}
+      <ul>
+        {% for message in messages %}
+          <li class="message"><p>{{ message }}</p></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+  
+{% endblock %}
+

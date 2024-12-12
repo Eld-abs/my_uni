@@ -1,0 +1,72 @@
+.frame {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h3 {
+  color: #ff5050;
+}
+
+.nav {
+  margin-bottom: 5em;
+}
+
+.nav a {
+  color: #ff5050;
+  text-decoration: none;
+  margin: 0 1em;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.nav a:hover {
+  color: #ff5050;
+}
+
+.schedule {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+table {
+  width: 60vw;
+  border-collapse: collapse;
+  margin-top: 1%;
+}
+
+.lessons span {
+  color: rosybrown;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 1em;
+  text-align: center;
+}
+
+th {
+  background-color: #ff5050;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #e0e0e0;
+}

@@ -1,0 +1,163 @@
+<!-- мы наследуем всё от файла layout -->
+{% extends 'teacher/base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'teacher/css/profile_update.css' %}">
+{% endblock %}
+
+{% block title %}Студент личный кабинет{% endblock %}
+
+{% block custom %}
+    <div class="frame frmae-1">
+      <div class="information">
+        <div class="profile_photo">
+          <img src="{{ profile.profile_picture.url }}" alt="Фото профиля">
+        </div>
+        <div class="data-and-update">
+          <ul class="data">
+            <li><p><span>Логин: </span> Нургул</p></li>
+            <li><p><span>Пароль: </span> ********</p></li>
+            <li><p><span>email: </span> tutemail@tr.mu</p></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="frame">
+      <h3>Личные данные</h3>
+      <table>
+        <tr>
+          <td colspan="2"><h4>Основная информация</h4></td>
+        </tr>
+        <tr>
+          <td><strong>Имя:</strong></td>
+          <td>Гулбайра</td>
+        </tr>
+        <tr>
+          <td><strong>Фамилия:</strong></td>
+          <td>Омуралиева</td>
+        </tr>
+        <tr>
+          <td><strong>Дата рождения:</strong></td>
+          <td>1979-г</td>
+        </tr>
+        <tr>
+          <td><strong>Пол:</strong></td>
+          <td>Женшина</td>
+        </tr>
+        <tr>
+          <td><strong>Номер телефона:</strong></td>
+          <td>+996 700 40 43 34</td>
+        </tr>
+        <tr>
+          <td colspan="2"><h5>Адрес</h5></td>
+        </tr>
+        <tr>
+          <td><strong>Область:</strong></td>
+          <td>Ош</td>
+        </tr>
+        <tr>
+          <td><strong>Район:</strong></td>
+          <td>Араван<td>
+        </tr>
+        <tr>
+          <td><strong>Город:</strong></td>
+          <td>Ош<td>
+        </tr>
+        <tr>
+          <td><strong>Село:</strong></td>
+          <td>Араван</td>
+        </tr>
+        <tr>
+          <td><strong>Дом:</strong></td>
+          <td>74<td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td colspan="2"><h4>Должностные данные</h4></td>
+        </tr>
+        <tr>
+          <td><strong>Должность:</strong></td>
+          <td>Профессор, доцент, преподаватель</td>
+        </tr>
+        <tr>
+          <td><strong>Факультет:</strong></td>
+          <td>Математика и информационные технологии</td>
+        </tr>
+        <tr>
+          <td><strong>Кафедра:</strong></td>
+          <td>Информационные системы и технологии в экономике</td>
+        </tr>
+        <tr>
+          <td><strong>Опыт работы:</strong></td>
+          <td>23 года</td>
+        </tr>
+        <tr>
+          <td><strong>Оклад:</strong></td>
+          <td>50.000 сом/месяц</td>
+        </tr>
+        <tr>
+          <td><strong>Зарплата:</strong></td>
+          <td>Оклад + курсы</td>
+        </tr>
+        <tr>
+          <td><strong>Дата и начало работы в универе:</strong></td>
+          <td>2002-год, (6045дней)</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td colspan="2"><h4>Специализация</h4></td>
+        </tr>
+        <tr>
+          <td><strong>Основные предметы:</strong></td>
+          <td>+</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Математика</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Информационные технологии</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Ремонт компьютерных систем</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Windows приложения</td>
+        </tr>
+        <tr>
+          <td><strong>Дополнительные предметы:</strong></td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><strong>Курируемая группа:</strong></td>
+          <td>ИСТ-1-23</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td colspan="2"><h4>Образование</h4></td>
+        </tr>
+        <tr>
+          <td><strong>Школа:</strong></td>
+          <td>Д.Шопоков год окончание: 1998-г</td>
+        </tr>
+        <tr>
+          <td><strong>Университет:</strong></td>
+          <td>Ошский государственный университет, год окончание: 2002-г</td>
+        </tr>
+      </table>
+    </div>
+    {% endblock %}
+    

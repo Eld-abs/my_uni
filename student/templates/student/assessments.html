@@ -1,0 +1,89 @@
+<!-- мы наследуем всё от файла layout -->
+{% extends 'student/base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'student/css/loans.css' %}">
+{% endblock %}
+
+{% block title %}Профиль{% endblock %}
+
+{% block custom %}
+  <div class="custom">
+    <h2>Оценки</h2>
+    <div class="frame">
+      <div class="block">
+        <h4>3-семестр</h4>
+        <div class="table-container">
+          <table>
+            <tr class="table-data">
+              <th><div class="cell-content">Уроки\Дата</div></th>
+              <td><div class="cell-content">2024.09 Пн\2</div></td>
+              <td><div class="cell-content">2024.09 Вт\3</div></td>
+              <td><div class="cell-content">2024.09 Ср\4</div></td>
+              <td><div class="cell-content">2024.09 Чт\5</div></td>
+              <td><div class="cell-content">2024.09 Пт\6</div></td>
+              <td><div class="cell-content">2024.09 Сб\7</div></td>
+              <td><div class="cell-content">2024.09 Вс\8</div></td>
+              <td><div class="cell-content">2024.09 Пн\9</div></td>
+              <td><div class="cell-content">2024.09 Вт\10</div></td>
+              <td><div class="cell-content">2024.09 Ср\11</div></td>
+              <td><div class="cell-content">2024.09 Чт\12</div></td>
+              <td><div class="cell-content">2024.09 Пт\13</div></td>
+              <td><div class="cell-content">2024.09 Сб\14</div></td>
+              <td><div class="cell-content">2024.09 Вс\15</div></td>
+              <td><div class="cell-content">2024.09 Пн\16</div></td>
+              <td><div class="cell-content">2024.09 Вт\17</div></td>
+              <td><div class="cell-content">2024.09 Ср\18</div></td>
+              <td><div class="cell-content">2024.09 Чт\19</div></td>
+              <td><div class="cell-content">2024.09 Пт\20</div></td>
+              <td><div class="cell-content">2024.09 Сб\21</div></td>
+              <td><div class="cell-content">2024.09 Вс\22</div></td>
+            </tr>
+            <tr>
+              <th><div class="cell-content">Матанализ</div></th>
+              <td><div class="cell-content"><div class="square"></div></div></td>
+              <td><div class="cell-content"><div class="square"></div></div></td>
+              <td><div class="cell-content"><div class="square"></div></div></td>
+              <td><div class="cell-content"><div class="square"></div></div></td>
+              <td><div class="cell-content"><div class="square"></div></div></td>
+              <td><div class="cell-content"><div class="square"></div></div></td>
+              <td><div class="cell-content"><div class="square"></div></div></td>
+            </tr>
+            <tr>
+              <th><div class="cell-content">Информационные технологии</div></th>
+              <td><div class="cell-content"></div></td>
+              <td><div class="cell-content"></div></td>
+              <td><div class="cell-content"></div></td>
+              <td><div class="cell-content"></div></td>
+              <td><div class="cell-content"></div></td>
+              <td><div class="cell-content"></div></td>
+              <td><div class="cell-content"></div></td>
+            </tr>
+            <tr>
+              <th><div class="cell-content">Программирование</div></th>
+              <td><div class="cell-content"></div></td>
+              <td><div class="cell-content"></div></td>
+              <td><div class="cell-content"></div></td>
+              <td><div class="cell-content"></div></td>
+              <td><div class="cell-content"></div></td>
+              <td><div class="cell-content"></div></td>
+              <td><div class="cell-content"></div></td>
+            </tr>
+            <tr>
+              <th><div class="cell-content">Английский язык</div></th>
+              <td><div class="cell-content"></div></td>
+              <td><div class="cell-content"></div></td>
+              <td><div class="cell-content"></div></td>
+              <td><div class="cell-content"></div></td>
+              <td><div class="cell-content"></div></td>
+              <td><div class="cell-content"></div></td>
+              <td><div class="cell-content"></div></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+    

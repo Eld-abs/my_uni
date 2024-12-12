@@ -1,0 +1,57 @@
+.frame {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+h3 {
+  font-size: 2em;
+}
+
+p {
+  font-size: 1.6em;
+  margin: 1em 0 0 0;
+}
+
+/* Общие стили для таблицы */
+table {
+  text-align: left;
+
+  width: 80%;
+  height: 100vh;
+  margin: 20px 0;
+  font-size: 1em;
+
+  background-color: #f9f9f9;
+
+  border-collapse: collapse; /* Убирает двойные границы */
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 0.5em;
+}
+
+th {
+  background-color: #ff5050;
+  color: white; 
+  text-transform: uppercase; /* Преобразование текста в верхний регистр */
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2; /* Цвет фона для чётных строк */
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Стили для ячеек */
+td {
+  font-size: 0.9em;
+  height: 10px;
+  white-space: nowrap; /* Одна строка текста */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Трехточие, если текст слишком длинный */
+}

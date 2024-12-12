@@ -1,0 +1,110 @@
+<!-- мы наследуем всё от файла layout -->
+{% extends 'student/base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'student/css/personal_account.css' %}">
+<link rel="stylesheet" href="{% static 'student/css/profile.css' %}">
+{% endblock %}
+
+{% block title %}Профиль{% endblock %}
+
+{% block custom %}
+  <div class="custom">
+    <h2>Профиль</h2>
+    <div class="frame">
+      <div class="information">
+        <div class="profile_photo">
+          <img src="{{ profile.profile_picture.url }}" alt="Фото профиля">
+        </div>
+        <ul class="data">
+          <li><p><span>Имя: </span>{{ profile.name }}</p></li>
+          <li><p><span>Фамилия: </span>{{ profile.surname }}</p></li>
+          <li><p><span>Специальность: </span>{{ group_name }}</p></li>
+          <li><p><span>Группа: </span>{{ group_code }}</p></li>
+          <li><p><span>Форма обучения: </span>{{ student_data.form_of_training }}</p></li>
+          <li><p><span>Форма оплаты: </span>{{ profile.ort_score }}</p></li>
+          <br>
+          <li><a href="{% url 'student:update_profile' pk=user.profile.id %}" class="btn_custom button-update">Изменить данные</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="student_data">
+      <h3>Данные студента</h3>
+      <table>
+        <tr>
+          <td><strong>Имя:</strong></td>
+          <td>{{ profile.name }}</td>
+        </tr>
+        <tr>
+          <td><strong>Фамилия:</strong></td>
+          <td>{{ profile.surname }}</td>
+        </tr>
+        <tr>
+          <td colspan="2"><h4>Адрес</h4></td>
+        </tr>
+        <tr>
+          <td><strong>Область:</strong></td>
+          <td>{{ profile.address_region }}</td>
+        </tr>
+        <tr>
+          <td><strong>Район:</strong></td>
+          <td>{{ profile.address_district }}</td>
+        </tr>
+        <tr>
+          <td><strong>Город:</strong></td>
+          <td>{{ profile.address_city }}</td>
+        </tr>
+        <tr>
+          <td><strong>Село:</strong></td>
+          <td>{{ profile.address_village }}</td>
+        </tr>
+        <tr>
+          <td><strong>Дом:</strong></td>
+          <td>{{ profile.address_home }}</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><strong>Дата рождения:</strong></td>
+          <td>{{ profile.birth_year }}</td>
+        </tr>
+        <tr>
+          <td><strong>Номер телефона:</strong></td>
+          <td>{{ profile.phone_number }}</td>
+        </tr>
+        <tr>
+          <td><strong>Пол:</strong></td>
+          <td>{{ profile.gender }}</td>
+        </tr>
+        <tr>
+          <td><strong>Школа:</strong></td>
+          <td>{{ profile.school }}</td>
+        </tr>
+        <tr>
+          <td><strong>ОРТ балл:</strong></td>
+          <td>{{ profile.ort_score }}</td>
+        </tr>
+        <tr>
+          <td><strong>Начало обучение:</strong></td>
+          <td>{{ student_data.start_date }}</td>
+        </tr>
+        <tr>
+          <td><strong>Конец обучение:</strong></td>
+          <td>5 июнь 2028 г.</td>
+        </tr>
+        <tr>
+          <td><strong>Форма обучение:</strong></td>
+          <td>{{ student_data.form_of_training }}</td>
+        </tr>
+        <tr>
+          <td><strong>Группа:</strong></td>
+          <td>{{ group_code }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+{% endblock %}
+    

@@ -1,0 +1,67 @@
+<!-- мы наследуем всё от файла base.html -->
+{% extends 'teacher/base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'teacher/css/syllabus_for_group.css' %}">
+<link rel="stylesheet" href="{% static 'teacher/css/syllabus_for_group_add.css' %}">
+{% endblock %}
+
+{% block title %}учебный план{% endblock %}
+
+{% block custom %}
+<div class="frame frame-1">
+  <h3>Учебный план</h3>
+  <div class="group">
+    <div class="about_group">
+      <p class="big"><strong>Группа:</strong> ИСТ-1-23</p>
+      <div class="texts">
+        <p><strong>Семестр:</strong> 3</p>
+        <p><strong>Предмет:</strong> Программирование</p>
+      </div>
+    </div>
+    <div class="func">
+    </div>
+  </div>
+  <div class="topics">
+    <div class="topic">
+      <table>
+        <thead>
+          <tr>
+            <td colspan="2"><strong class="tema">Тема: </strong><input placeholder="Тема" type="text" class="input_tema"></td>
+          </tr>
+        </thead>
+        <tr>
+          <td><strong>Количество часов:</strong></td>
+          <td>
+            <tr>
+              <td>Лекции: </td>
+              <td><input placeholder="1 или 2 или ..." type="number"></td>
+            </tr>
+            <tr>
+              <td>Лаборатории: </td>
+              <td><input placeholder="1 или 2 или ..." type="number"></td>
+            </tr>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Дата начала темы: </strong></td>
+          <td><input type="date"></td>
+        </tr>
+        <tr>
+          <td><strong>Статус: </strong></td>
+          <td>тут выбор, завершено: в процессе: не начета</td>
+        </tr>
+        <tr>
+          <td><strong>Введите план урока: </strong></td>
+          <td><textarea rows="5"></textarea></td>
+        </tr>
+      </table>
+    </div>
+    <div class="buttons">
+      <a href="{% url 'teacher:syllabus_for_group' %}" class="btn_custom button-update"><i class="bi bi-box-arrow-left mini-icon"></i>Вернутся назад</a>
+      <button class="btn_custom button-update"><i class="bi bi-plus-circle mini-icon"></i>Добавить тему</button>
+    </div>
+  </div>
+</div>
+{% endblock %}

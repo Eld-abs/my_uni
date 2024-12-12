@@ -1,0 +1,116 @@
+button {
+  all: unset; /* Убирает все стили */
+}
+
+.btn_custom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0.3em 0.5em;
+  font-size: 1em;
+  text-align: center;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;  
+}
+
+/* button-update */
+.button-update {
+  width: 15em;
+  height: 2em;
+  
+  border: 2px solid transparent;
+  border-radius: 10px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5) , inset 0 0 10px rgba(255, 255, 255, 0.5);
+  
+  text-decoration: none;  
+  background-color: rgba(255, 0, 0, 0.518);
+  color: white;
+}
+
+.button-update:hover {
+  transform: scale(1.02);
+}
+
+.button-update:active {
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.8);
+  transform: scale(0.99); /* Легкое уменьшение кнопки при нажатии */
+}
+
+/* button-navigate */
+.button-navigate {
+  width: 15em;
+  height: 2.8em;
+  
+  border: 2px solid transparent;
+  box-shadow: 0 0 10px rgba(70, 70, 70, 0.5) , inset 0 0 10px rgba(138, 138, 138, 0.5);
+  
+  font-size: 1.3em;
+  
+  border-radius: 20px;
+  text-decoration: none;  
+  background-color: rgb(255, 80, 80);
+  color: rgb(42, 42, 42);
+}
+
+.button-navigate:hover {
+  transform: scale(1.02);
+}
+
+.button-navigate:active {
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.8);
+  transform: scale(0.99); /* Легкое уменьшение кнопки при нажатии */
+}
+
+.button-for-exit {
+  padding: 0 1em;
+  
+  width: 15em;
+  height: 4em;
+  gap: 1em;
+  
+  box-shadow: 0 0 3px rgb(0, 0, 0) , inset 0 0 10px rgba(255, 255, 255, 0.5);
+
+  background-color: #dedede;
+  color: rgb(0, 0, 0);
+}
+
+.button-for-exit:hover {
+  transform: scale(1.02);
+}
+
+.button-for-exit:active {
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.8);
+  transform: scale(0.99); /* Легкое уменьшение кнопки при нажатии */
+}
+
+.red:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3),
+              inset 0 0 10px rgb(255, 0, 0);
+}
+
+.red:active {
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.734),
+              inset 0 0 10px rgb(255, 0, 0);
+}
+
+.green:hover {
+  box-shadow: 0 0 10px #0000004d,
+              inset 0 0 10px rgb(3, 255, 58);
+}
+
+.green:active {
+  box-shadow: 0 0 10px rgb(3, 255, 58),
+              inset 0 0 10px rgb(3, 255, 58);
+}
+/* лавандовый синий */
+.ln_blue:hover {
+  box-shadow: 0 0 10px #0000004d,
+              inset 0 0 10px #8378ff
+}
+.ln_blue:active {
+  box-shadow: 0 0 10px #8378ff,
+              inset 0 0 10px #8378ff
+}

@@ -1,0 +1,105 @@
+<!-- мы наследуем всё от файла base.html -->
+{% extends 'teacher/base.html' %}
+{% load static %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{% static 'teacher/css/find_students.css' %}">
+{% endblock %}
+
+{% block title %}Поиск студента{% endblock %}
+
+{% block custom %}
+  <div class="frame frame-1">
+    <h3>Поиск студента</h3>
+    <div class="search">
+      <input type="text" class="search_input">
+      <button><i class="bi bi-search icon_search"></i></button>
+    </div>
+    <div class="table_students">
+      <table>
+        <thead>
+          <tr>
+            <td>Фамилия имя</td>
+            <td>Группа</td>
+            <td>Семестр</td>
+            <td>Я преподаю</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Дуйшеев Асан</td>
+            <td>ИСТ-1-23</td>
+            <td>3</td>
+            <td>ДА</td>
+          </tr>
+          <tr>
+            <td>Дуйшеев Асан</td>
+            <td>ИСТ-1-23</td>
+            <td>3</td>
+            <td>ДА</td>
+          </tr>
+          <tr>
+            <td>Дуйшеев Асан</td>
+            <td>ИСТ-1-23</td>
+            <td>3</td>
+            <td>ДА</td>
+          </tr>
+          <tr>
+            <td>Дуйшеев Асан</td>
+            <td>ИСТ-1-23</td>
+            <td>3</td>
+            <td>ДА</td>
+          </tr>
+          <tr>
+            <td>Дуйшеев Асан</td>
+            <td>ИСТ-1-23</td>
+            <td>3</td>
+            <td>ДА</td>
+          </tr>
+          <tr>
+            <td>Дуйшеев Асан</td>
+            <td>ИСТ-1-23</td>
+            <td>3</td>
+            <td>ДА</td>
+          </tr>
+          <tr>
+            <td>Дуйшеев Асан</td>
+            <td>ИСТ-1-23</td>
+            <td>3</td>
+            <td>ДА</td>
+          </tr>
+          <tr>
+            <td>Дуйшеев Асан</td>
+            <td>ИСТ-1-23</td>
+            <td>3</td>
+            <td>ДА</td>
+          </tr>
+          <tr>
+            <td>Дуйшеев Асан</td>
+            <td>ИСТ-1-23</td>
+            <td>3</td>
+            <td>ДА</td>
+          </tr>
+          <tr>
+            <td>Дуйшеев Асан</td>
+            <td>ИСТ-1-23</td>
+            <td>3</td>
+            <td>ДА</td>
+          </tr>
+          <tr>
+            <td>Дуйшеев Асан</td>
+            <td>ИСТ-1-23</td>
+            <td>3</td>
+            <td>ДА</td>
+          </tr>
+          <tr>
+            <td>Дуйшеев Асан</td>
+            <td>ИСТ-1-23</td>
+            <td>3</td>
+            <td>ДА</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+{% endblock %}

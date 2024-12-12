@@ -1,0 +1,159 @@
+/* Стили для логина(для авторизации) */
+* {
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+
+.logo {
+  color: black;
+  outline-style: none;
+  font-size: 3em;
+  text-decoration: none;
+}
+
+.logo i {
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.logo i:hover {
+  transform: scale(1.05); /* Увеличиваем иконки внутри .logo на 10% при наведении */
+}
+
+.logo span {
+  transition: transform 0.275s ease;
+  display: inline-block;
+}
+
+.logo span:hover {
+  transform: scale(1.05);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  background-color: rgb(255, 255, 255);
+  height: 60%;
+  width: 35%;
+  max-width: 450px;
+  margin: 0;
+  
+  text-align: center;
+  border: 2px solid #ffffff;
+  border-radius: 2%;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3), /* Внешняя тень */
+                inset 0 0 15px rgba(255, 255, 255, 0.3); /* Внутренняя тень */
+  font-size: 2.5vh;
+}
+
+.content h5 {
+  margin: 3% auto 0 auto;
+
+  font-size: 1.25em;
+  font-weight: 600;
+}
+
+.login_form {
+  text-align: left;
+  margin: 5% auto 15% auto;
+
+  width: 80%;
+}
+
+.login_form p {
+  margin: 0;
+  padding: 0;
+}
+
+.custom-form {
+  display: flex;
+  flex-direction: column;
+  font-size: 1em;
+  
+  left: 0;
+  border-radius: 10px;
+  border: 2px solid rgb(0, 0, 0);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.500);
+
+  transition: transform 0.3s ease;
+  padding: 0 10%;
+  width: 100%; /* или любое другое значение, которое вам подходит */
+  max-width: 600px; /* максимальная ширина для предотвращения слишком большого растяжения */
+  margin: 0 auto 3% auto; /* центрирует форму по горизонтали */
+}
+
+.custom-form:hover {
+  transform: scale(1.01);
+}
+
+.error {
+  height: 20%;
+  width: 100%;
+
+  margin-bottom: 3%;
+
+  font-size: 0.6em;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  flex-direction: column; /* Устанавливаем вертикальное расположение элементов */
+}
+
+.linkss {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.login {
+  align-self: flex-end;
+  
+  transition: transform 0.3s ease;
+  font-size: 0.7em;
+}
+
+.login:hover {
+  transform: scale(1.05);
+}
+
+.button-login {
+  width: 100%;
+  
+  border: 2px solid transparent;
+  border-radius: 10px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5)/* , inset 0 0 10px rgba(255, 255, 255, 0.5) */;
+  transition: transform 0.3s ease;
+
+  background-color: black;
+  color: white;
+}
+
+.button-login:hover {
+  transform: scale(1.02);
+}
+
+.button-login:active {
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.8);
+  transform: scale(0.99); /* Легкое уменьшение кнопки при нажатии */
+}
+
+/* br {
+  margin: 0;
+  padding: 0;
+} */
+
+/* Editor › Hover: Enabled Найди это и отклюичи чтобы не показывался подсказки сверху при новедении*/

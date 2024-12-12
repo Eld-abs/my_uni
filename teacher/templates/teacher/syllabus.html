@@ -1,0 +1,77 @@
+<!-- мы наследуем всё от файла base.html -->
+{% extends 'teacher/base.html' %}
+{% load static %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{% static 'teacher/css/syllabus.css' %}">
+{% endblock %}
+
+{% block title %}учебный план{% endblock %}
+
+{% block custom %}
+  <div class="frame frame-1">
+    <h3>Учебный план</h3>
+    <h5>3-семестр</h5>
+    <div class="group">
+      <div class="about_group">
+        <p class="big"><strong>Группа:</strong> ИСТ-1-23</p>
+        <div class="texts">
+          <p><strong>Семестр:</strong> 3</p>
+          <p><strong>Предмет:</strong> Программирование</p>
+        </div>
+      </div>
+      <a href="" class="btn_custom button-navigate">Перейти</a>
+    </div>
+    <div class="group">
+      <div class="about_group">
+        <p class="big"><strong>Группа:</strong> ГД-2-23</p>
+        <div class="texts">
+          <p><strong>Семестр:</strong> 3</p>
+          <p><strong>Предмет:</strong> Программирование</p>
+        </div>
+      </div>
+      <a href="{% url 'teacher:syllabus_for_group' %}" class="btn_custom button-navigate">Перейти</a>
+    </div>
+    <h5>5-семестр</h5>
+    <div class="group">
+      <div class="about_group">
+        <p class="big"><strong>Группа:</strong> ПО-4-22</p>
+        <div class="texts">
+          <p><strong>Семестр:</strong> 5</p>
+          <p><strong>Предмет:</strong> Программирование</p>
+        </div>
+      </div>
+      <a href="" class="btn_custom button-navigate">Перейти</a>
+    </div>
+    <div class="group">
+      <div class="about_group">
+        <p class="big"><strong>Группа:</strong> ПИЭ-1-22</p>
+        <div class="texts">
+          <p><strong>Семестр:</strong> 5</p>
+          <p><strong>Предмет:</strong> Программирование</p>
+        </div>
+      </div>
+      <a href="" class="btn_custom button-navigate">Перейти</a>
+  </div>
+    <h5>7-семестр</h5>
+    <div class="group">
+      <div class="about_group">
+        <p class="big"><strong>Группа:</strong> ПО-4-22</p>
+        <div class="texts">
+          <p><strong>Семестр:</strong> 5</p>
+          <p><strong>Предмет:</strong> Программирование</p>
+        </div>
+      </div>
+      <a href="" class="btn_custom button-navigate">Перейти</a>
+    </div>
+    <div class="group">
+      <div class="about_group">
+        <p class="big"><strong>Группа:</strong> ПИЭ-1-22</p>
+        <div class="texts">
+          <p><strong>Семестр:</strong> 5</p>
+          <p><strong>Предмет:</strong> Программирование</p>
+        </div>
+      </div>
+      <a href="" class="btn_custom button-navigate">Перейти</a>
+  </div>
+{% endblock %}

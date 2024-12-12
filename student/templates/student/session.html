@@ -1,0 +1,69 @@
+<!-- мы наследуем всё от файла layout -->
+{% extends 'student/base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'student/css/session.css' %}">
+{% endblock %}
+
+{% block title %}Профиль{% endblock %}
+
+{% block custom %}
+  <div class="custom">
+    <h2>Сессия</h2>
+    <div class="frame">
+      <div class="block">
+        <h3>3-семестр</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Предмет</th>
+                <th>Модуль-1</th>
+                <th>Модуль-2</th>
+                <th>Экзамен</th>
+                <th>Сумма</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Матанализ</td>
+                <td>30</td>
+                <td>0</td>
+                <td>0</td>
+                <td>30</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Теория вероятностей</td>
+                <td>30</td>
+                <td>0</td>
+                <td>0</td>
+                <td>30</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Информационные технологии</td>
+                <td>30</td>
+                <td>0</td>
+                <td>0</td>
+                <td>30</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Разработка Windows приложений</td>
+                <td>30</td>
+                <td>0</td>
+                <td>0</td>
+                <td>30</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>            
+      </div>
+    </div>
+  </div>
+{% endblock %}
+    

@@ -1,0 +1,52 @@
+.frame {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  margin-bottom: 2em;
+
+  height: auto;
+}
+
+.block {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  
+  background-color: #fff9f9;
+  
+  padding: 1.5em;
+  margin: 2em;
+
+  border-top: 1px solid #0000007e;
+  border-bottom: 1px solid #0000007e;
+}
+
+.block h4 {
+  border-bottom: 1px solid #0000007e;
+  padding-bottom: 0.3em;
+}
+.block table {
+  margin: 1em 0 0 0;
+  padding: 2em;
+
+  border-collapse: separate; /* Раздельные границы */
+  border-spacing: 0;
+
+  list-style: none;
+  margin-bottom: 1em;
+  border-radius: 10px;
+
+  box-shadow: 1px 1px 3px #ffcccc;
+}
+
+.block tr td {
+  font-size: 1.2em;
+  padding-top: 1em;
+  width: 16em;
+}
+
+.block tr td span {
+  font-size: 1.2em;
+  font-weight: 600;
+}

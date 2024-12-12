@@ -1,0 +1,47 @@
+  <!-- мы наследуем всё от файла layout -->
+  {% extends 'main/layout.html' %}
+
+  {% load static %}
+
+  {% block title %}Войти{% endblock %}
+  {% block styles %}
+  <link rel="stylesheet" href="{% static 'main/css/login.css' %}">
+  {% endblock %}
+
+  {% block content %}
+  <div class="body_login">
+    <div class="container">
+      <a href="#" class="logo"><i class="bi bi-bank"></i> <span>MyUni</span></a>
+
+      <div class="content">
+        <h5>Войдите в свою учетную запись</h5>      
+        <form method="post" class="login_form">
+          {% csrf_token %}
+        
+          <p>Имя пользователя</p>
+          {{ form.username }}    
+          
+          <p>Пароль</p>
+          {{ form.password }}
+          
+          <p>Email</p>
+          {{ form.email }}
+
+          <div class="error">
+            {% if form.non_field_errors %}
+              {{ form.non_field_errors }}
+            {% endif %}
+          </div>
+
+          <div class="buttons">
+            <button type="submit" class="button-login">Войти</button>
+            <div class="linkss">
+              <a href="{% url 'main:help' %}" class="login">помощь</a>
+              <a href="{% url 'main:first_step_registration' %}" class="login">нет аккаунта?</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  {% endblock %}

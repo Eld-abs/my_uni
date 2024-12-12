@@ -1,0 +1,119 @@
+/* если удаляешь стили то знай, что проверь и base.css, вить мы наследуем от него */
+.custom {
+  /* align-items: center; */
+  padding: 2% 7%;
+}
+
+h4 {
+  font-size: 2em;
+  font-weight: 550;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+form p {
+  margin-bottom: 1%;
+  font-weight: 600;
+}
+
+form p span {
+  color: red;
+}
+
+.address {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.custom-form {
+  display: flex;
+  font-size: 1em;
+  gap: 10%;
+  
+  left: 0;
+  border-radius: 10px;
+  border: 2px solid rgb(0, 0, 0);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.500);
+  background-color: rgb(255, 255, 255);
+
+  transition: transform 0.3s ease;
+  padding: 0 10%;
+  width: 100%; /* или любое другое значение, которое вам подходит */
+  margin: 0 auto 3% auto; /* центрирует форму по горизонтали */
+}
+
+.custom-form:hover {
+  transform: scale(1.01);
+}
+
+input[type="file"].custom-form {
+    width: 100%;
+    padding: 10px;
+    background-color: #ffffff; /* цвет фона */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.gender-choice {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: flex-start;
+  color: #000000; /* Основной цвет текста */
+}
+
+.gender-choice p {
+  margin: 0 0 2% 0;
+  text-align: right;
+}
+
+.gender-choice span {
+  display: flex;
+  gap: 40%;
+}
+
+.gender-choice span label {
+  display: flex;
+  gap: 10%;
+}
+
+/* Стили для самих радио-кнопок */
+.custom-form input[type="radio"] {
+    accent-color: #0037ff; /* цвет акцента (поддерживается в современных браузерах) */
+    width: 1em;
+    height: 1em;
+    margin: 10% auto;
+    
+    cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.back:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3),
+              inset 0 0 10px rgb(255, 0, 0);
+}
+
+.back:active {
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.734),
+              inset 0 0 10px rgb(255, 0, 0);
+}
+
+.save:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3),
+              inset 0 0 10px rgb(3, 255, 58);
+}
+
+.save:active {
+  box-shadow: 0 0 10px rgb(3, 255, 58),
+              inset 0 0 10px rgb(3, 255, 58);
+}

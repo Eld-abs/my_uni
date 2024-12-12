@@ -1,0 +1,56 @@
+<!-- наследуем все от base.html -->
+{% extends 'applicant/base.html' %}
+
+<!-- помогает загрузить статические файлы  -->
+{% load static %}
+
+<!-- тайтл -->
+{% block title %}Личный кабинет студента{% endblock %}
+
+<!-- можно подключать стили -->
+{% block styles %}
+<link rel="stylesheet" href="{% static 'applicant/css/update_profile.css' %}">
+{% endblock %}
+
+<!-- h3 в base -->
+{% block h3 %}Изменить данные абитуриента:  <span>{{ profile.surname }}{{ profile.name }}</span>{% endblock %}
+
+{% block custom %}
+<h4>Изменит данные</h4>
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <!-- {{ form.as_p }} -->
+  <p>Имя:</p>
+  {{ form.name }}
+  <p>Фамилия:</p>
+  {{ form.surname }}
+  <p>Выберите фото:</p>
+  {{ form.profile_picture }}
+  <div class="address">
+    <p>Область:</p>    
+    {{ form.address_region }}
+    <p>Район:</p>    
+    {{ form.address_district }}
+    <p>Город:</p>    
+    {{ form.address_city }}
+    <p>Село:</p>    
+    {{ form.address_village }}
+    <p>Дом:</p>    
+    {{ form.address_home }}
+  </div>
+  <p>Пол:</p>
+  {{ form.gender }}
+  <p>Школа:</p>
+  {{ form.school }}
+  <p>Год рождение:</p>
+  {{ form.birth_year }}
+  <p>Номер телефона:</p>
+  {{ form.phone_number }}
+  <p>ОРТ балл<span>(вы не можете изменить ОРТ балл после регистрации!)</span>:</p>
+  {{ form.ort_score }}
+  <div class="buttons">
+    <a href="{% url 'applicant:personal_account'%}" class="button-update back">Ввернутся без изменений</a>
+    <button class="button-update save" type="submit">Добавить изменения</button>
+  </div>
+</form>
+{% endblock %}

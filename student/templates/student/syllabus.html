@@ -1,0 +1,81 @@
+<!-- мы наследуем всё от файла layout -->
+{% extends 'student/base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'student/css/syllabus.css' %}">
+{% endblock %}
+
+{% block title %}Профиль{% endblock %}
+
+{% block custom %}
+  <div class="custom">
+    <h2>Учебный план</h2>
+    <div class="frame">
+      <h3>Мой учебный план 2024-2025</h3>
+      <p><strong>Специальность:</strong> Информационные системны и технологии в экономике</p>
+
+      <table>
+      <thead>
+        <tr>
+          <th>№</th>
+          <th>Предмет</th>
+          <th>Кредиты</th>
+          <th>Преподаватель</th>
+        </tr>
+      </thead>
+        <tr>
+          <td>1</td>
+          <td>Матанализ</td>
+          <td>4</td>
+          <td>Замирбек кызы Н.</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Информационные технологии</td>
+          <td>4</td>
+          <td>Нуранов Б.</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Соврименный язык програмирование</td>
+          <td>5</td>
+          <td>Омуралиева Г.</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Програмирование</td>
+          <td>5</td>
+          <td>Тажикбаева С.Т</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Разработка и приминение ППП в ИС</td>
+          <td>5</td>
+          <td>Омуралиева Г.</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Разработка Windows-приложений</td>
+          <td>4</td>
+          <td>Маткалык кызы К.</td>
+        </tr>
+      <!-- <tbody>
+        {% for lesson in lessons %}
+          <tr {% if forloop.counter <= budget_places %}class="highlight"{% endif %}>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ lesson.name }}</td>
+            <td>{{ lesson.loans }}</td>
+            <td>{{ lesson.professor }}</td>
+          </tr>
+        {% empty %}
+          <tr>
+            <td colspan="4" class="no-applicants">Нет студентов выбравший бюджет</td>
+          </tr>
+        {% endfor %} -->
+      </tbody>
+    </table>
+    </div>
+  </div>
+{% endblock %}
+    

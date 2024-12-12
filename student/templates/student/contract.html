@@ -1,0 +1,50 @@
+<!-- мы наследуем всё от файла layout -->
+{% extends 'student/base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'student/css/contract.css' %}">
+{% endblock %}
+
+{% block title %}Профиль{% endblock %}
+
+{% block custom %}
+  <div class="custom">
+    <h2>Контракт</h2>
+    <div class="frame">
+      <div class="block">
+        <h4>Информационные системы и технологии в экономике(1&2-семестр)</h4>
+        <div class="mini_block">
+          <table>
+            <tr>
+              <td><span>Всего кредитов:</span></td>
+              <td>27</td>
+            </tr>
+            <tr>
+              <td><span>Сумма:</span></td>
+              <td>32000</td>
+            </tr>
+            <tr>
+              <td><span>Форма оплаты:</span></td>
+              <td>Контракт</td>
+            </tr>
+            <tr>
+              <td><span>Оплачено</span></td>
+              <td>19400 сом</td>
+            </tr>
+            <tr>
+              <td><span>Долг:</span></td>
+              <td>12600</td>
+            </tr>
+            <tr>
+              <td><span>Реквизит</span></td>
+              <td>2332004</td>
+            </tr>
+          </table>
+          <a href="">Как оплатить?</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+    
