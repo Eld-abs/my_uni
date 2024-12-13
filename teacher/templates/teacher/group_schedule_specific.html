@@ -1,0 +1,92 @@
+<!-- мы наследуем всё от файла base.html -->
+{% extends 'teacher/base.html' %}
+{% load static %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{% static 'teacher/css/find_students_specific.css' %}">
+{% endblock %}
+
+{% block title %}Расписание выбранной группы{% endblock %}
+
+{% block custom %}
+  <div class="frame frame-1">
+    <h3>Расписание группы ИСТ-1-22</h3>
+    <div class="table_students">
+      <table>
+        <thead>
+          <tr>
+            <td>№</td>
+            <td>Понедельник</td>
+            <td>Вторник</td>
+            <td>Среда</td>
+            <td>Четверг</td>
+            <td>Пятница</td>
+            <td>Суббота</td>
+            <td>Время</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><span>Нет пары</span></td>
+            <td><span>Нет пары</span></td>
+            <td><span>Нет пары</span></td>
+            <td><span>Нет пары</span></td>
+            <td><span>Нет пары</span></td>
+            <td><span>Нет пары</span></td>
+            <td>8:20-9:50</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><span>Нет пары</span></td>
+            <td><span>Нет пары</span></td>
+            <td><span>Нет пары</span></td>
+            <td><span>Нет пары</span></td>
+            <td><span>Нет пары</span></td>
+            <td><span>Нет пары</span></td>
+            <td>10:00-11:30</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Философия</td>
+            <td>Теория вероятностей</td>
+            <td><span>Нет пары</span></td>
+            <td>Информационные технологии</td>
+            <td>Разработка и применение ППП в ИС</td>
+            <td><span>Нет пары</span></td>
+            <td>11:40-13:10</td>
+          </tr>
+          <tr><td>4</td>
+            <td><span>Нет пары</span></td>
+            <td>Программирование</td>
+            <td>Информационные технологии</td>
+            <td><span>Нет пары</span></td>
+            <td>Программирование</td>
+            <td><span>Нет пары</span></td>
+            <td>13:20-14:50</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Разработка и применение ППП в ИС</td>
+            <td>Программирование</td>
+            <td><span>Нет пары</span></td>
+            <td>Разработка и применение ППП в ИС</td>
+            <td><span>Нет пары</span></td>
+            <td><span>Нет пары</span></td>
+            <td>15:00-16:30</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Физическая культура</td>
+            <td>Разработка и применение ППП в ИС</td>
+            <td>Философия</td>
+            <td>Физическая культура</td>
+            <td><span>Нет пары</span></td>
+            <td><span>Нет пары</span></td>
+            <td>16:40-18:10</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+{% endblock %}

@@ -148,3 +148,19 @@ class GroupScheduleView(ProfileRequiredMixins, ListView):
     context['user'] = user
     context['profile'] = profile
     return context
+
+
+class GroupScheduleSpecificView(ProfileRequiredMixins, ListView):
+  model = Profile
+  context_object_name = 'pr0file'
+  template_name = 'teacher/group_schedule_specific.html'
+
+  def get_context_data(self, **kwargs):
+    context = super().get_context_data(**kwargs)
+
+    user = self.request.user
+    profile = ProfileService.get_profile(user)
+
+    context['user'] = user
+    context['profile'] = profile
+    return context

@@ -11,4 +11,5 @@ urlpatterns = [
   path('schedule/', views.ScheduleView.as_view(), name='schedule'),
   path('find_students/', views.FindStudentsView.as_view(), name='find_students'),
   path('group_schedule/', views.GroupScheduleView.as_view(), name='group_schedule'),
+  path('group_schedule_specific', views.GroupScheduleSpecificView.as_view(), name='group_schedule_specific'),
 ]
