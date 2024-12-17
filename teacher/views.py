@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, UpdateView
+from django.views.generic import ListView
 from main.models import Profile
 from student.mixins import ProfileRequiredMixins
 from student.services import ProfileService

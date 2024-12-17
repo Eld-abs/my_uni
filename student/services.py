@@ -1,5 +1,5 @@
 
-from main.models import Profile, StudentData, Faculty, Lesson
+from main.models import Profile, StudentData
 from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404
 from django.http import Http404
