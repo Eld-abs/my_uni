@@ -7,3 +7,10 @@ class Teacher(models.Model):
   department = models.OneToOneField(Department, on_delete=models.DO_NOTHING, related_name='teacher', null=False, blank=False)
   lesson = models.ManyToManyField(Lesson, related_name='teacher', null=False, blank=False)
   salary = models.FloatField(validators=[MinValueValidator(0.0), MaxValueValidator(500000.0)], null=True, blank=True, default=0.0, verbose_name='Зарплата', help_text='Введите зарплату сотрудника')
+
+  class Meta:
+    verbose_name = 'Преподаватель'
+    verbose_name_plural = 'Преподаватели'
+
+  def __str__(self):
+    return self.profile.name

@@ -97,7 +97,7 @@ class LessonAndSpecialty(models.Model):
   obligatory = models.BooleanField(default=False, null=False, blank=False, verbose_name='Обязательный ли этот урок для этой специальности', help_text='Выберите обязательный ли урок для группы')
   semesters = ArrayField(models.PositiveIntegerField(), blank=True, default=list, verbose_name='В каких семестрах будет преподаётся этот урок', help_text='Введите список семестров, например: [1, 2, 3]')
   price = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(100000)], verbose_name='Цена урока, в сомах', help_text='Введите сколько стоит этот урок в сомах')
-  loans = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(20)], verbose_name='Кредиты', help_text='Введите сколько кредитов для этого урока')
+  loans = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(20)], default=0, verbose_name='Кредиты', help_text='Введите сколько кредитов для этого урока')
 
   class Meta:
     verbose_name = 'Урок'
@@ -140,8 +140,8 @@ class Profile(models.Model):
 
   # устанавливаем связь между user и profile, но пользователь не может быть связан другой Profile благодаря OneToOneField(но можно создать другой Например Address и связать с пользователям)
   # (User, on_delete=models.CASCADE) связь будет с User, если удалят User то его профиль тоже удалится
-  user = models.OneToOneField(User, on_delete=models.CASCADE) # связь с моделью User
-  address = models.OneToOneField(Address, on_delete=models.CASCADE, related_name='object_info', null=False, blank=False)
+  user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile', null=False) # связь с моделью User
+  address = models.OneToOneField(Address, on_delete=models.CASCADE, related_name='object_info', null=False)
   name = models.CharField(max_length=250, null=False, blank=False)
   surname = models.CharField(max_length=250, null=False, blank=False)
   profile_picture = models.ImageField(upload_to=f'imgs/profile_pictures/{id}_{name}', null=True, blank=False)
@@ -151,6 +151,10 @@ class Profile(models.Model):
   birth_year = models.DateField(null=False, blank=False)
   phone_number = models.CharField(max_length=250)
 
+  class Meta:
+    verbose_name = 'Профиль'
+    verbose_name_plural = 'Профили'
+
   def __str__(self):
     return self.name
   
@@ -158,28 +162,63 @@ class Profile(models.Model):
   def get_absolute_url(self):
     return reverse('update_profile', kwargs={'pk': self.pk})
 
-  class Meta:
-    verbose_name = 'Профиль'
-    verbose_name_plural = 'Профили'
-
 
 class LessonAndGroup(models.Model):
   lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE, related_name='lesson_and_group', null=False)
   group = models.ForeignKey(Group, on_delete=models.CASCADE, related_name='lesson_and_group', null=False)
   teacher = models.ForeignKey(Group, on_delete=models.CASCADE, related_name='lesson_and_group', null=False)
 
-
-class StudentData(models.Model):
-  user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='student_data')
-  group = models.ForeignKey(Group, on_delete=models.SET_NULL, related_name='students_data', null=True)
-  temporary_group = models.ForeignKey(GroupStudents, on_delete=models.SET_NULL, related_name='students_data', null=True)
-  start_date = models.DateField()
-  end_date = models.DateField()
-  form_of_training = models.CharField(max_length=250, null=True, blank=False)
+  class Meta:
+    verbose_name = 'Урок и группа'
+    verbose_name_plural = 'Уроки и группы'
 
   def __str__(self):
-    return self.user.username
-   
+    return f'{self.lesson.name} {self.group.object_info.name}'
+
+
+class Topic(models.Model):
+  class StatusChoices(models.Choices):
+    IN_THE_PLANS = 'TP', 'В планах'
+    IN_PROGRESS = 'IP', 'В процессе'
+    COMPLETED = 'CP', 'Завершено'
+
+  name = models.CharField(max_length=250, blank=False, null=False)
+  lesson_and_group = models.ForeignKey(LessonAndGroup, on_delete=models.CASCADE, related_name='topic', null=False)
+  semester = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(20)], null=False, blank=False)
+  number_hours = models.JSONField(default=dict, null=True, verbose_name='Введите тип урока, и сколько часов' ,help_text='Ожидается в виде json файла')
+  status = models.CharField(max_length=2, choices=StatusChoices.choices, null=False, blank=False, verbose_name='Статус урока: в планах, в процессе, завершено', help_text='Выберите тип обучение')
+  date_topic_end = models.DateField(null=False)
+
   class Meta:
-    verbose_name = 'Информация студента(связанные с университетом)'
-    verbose_name_plural = 'Информации студентов(связанные с университетом)'
+    verbose_name = 'Тема'
+    verbose_name_plural = 'Темы'
+
+  def __str__(self):
+    return self.name
+
+
+class Pair(models.Model):
+  group = models.ForeignKey(Group, on_delete=models.CASCADE, null=False, related_name='pair')
+  date = models.DateField(null=False)
+  pair = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(8)], null=False)
+  audience = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(1000)], null=False)
+  
+  def get_absolute_url(self):
+    return f'Пара для {self.group.object_info.name}'
+
+  class Meta:
+    verbose_name = 'Пара'
+    verbose_name_plural = 'Пары'
+  
+
+class Attendance(models.Model):
+  lesson_and_group = models.ForeignKey(LessonAndGroup, on_delete=models.CASCADE, related_name='attendance', null=False)
+  date = models.DateField(null=False)
+  pair = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(8)], null=False, default='0')
+
+  class Meta:
+    verbose_name = 'Пара'
+    verbose_name_plural = 'Пары'
+    
+  def __str__(self):
+    return f'Посещаемость группы для {self.lesson_and_group.group.object_info.name}'
